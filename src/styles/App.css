@@ -1,0 +1,139 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+body {
+    background-color: black;
+    background-image: url("../images/img1.jpg");
+    background-size: cover;
+    color: white;
+    font-family: "Roboto", sans-serif;
+    font-size: 1.2em;
+    position: relative;
+}
+
+@media (max-width: 1199px) and (min-width: 992px) {
+    body {
+        font-size: 1rem;
+    }
+    /* .App {
+        padding: 1rem 2rem;
+    } */
+}
+
+@media (max-width: 991px) {
+    body {
+        font-size: 0.85rem;
+    }
+    .area-for-personal-photo {
+        width: auto;
+    }
+
+    .soft-skills {
+        margin-top: 1em;
+    }
+}
+
+@media (max-width: 546px) {
+    body {
+        font-size: 0.7rem;
+    }
+}
+
+.App {
+    padding: 1em 20em;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 87vh;
+}
+
+.nav_block {
+    display: flex;
+    justify-content: space-between;
+    font-size: 1.8em;
+}
+
+.textBlock {
+    font-family: "Orbitron", sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 1.2em;
+    /* margin-top: 3em; */
+    width: 60%;
+    font-size: 4em;
+}
+
+.bottom_btns {
+    display: flex;
+    margin-top: 1em;
+}
+.btn_div {
+    margin-right: 3em;
+}
+
+/* List of games  */
+
+.block-games {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 2em;
+    font-size: 0.9em;
+    margin-top: 2em;
+}
+
+.block-one-game {
+    border-radius: 10px;
+    background: rgba(17, 17, 17, 0.5);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 1em;
+    /* margin: 1em; */
+    min-width: 120px;
+    max-height: 150px;
+    min-height: 150px;
+}
+.game-name {
+    width: 100%;
+}
+
+.game-detail {
+    margin-top: 0.5em;
+}
+
+.game-detail-plt {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+.logo-platform {
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.game-detail-bottom {
+    font-size: 0.8em;
+    margin-top: 0.5em;
+    align-items: center;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+.fa-brands {
+    font-size: 18px;
+}
+
+.fa-playstation {
+    color: #006fcd;
+}
+
+.fa-xbox {
+    color: #2ca243;
+}
