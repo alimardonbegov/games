@@ -43,24 +43,29 @@ function ListOfCards(props) {
             </MyButton>
             <MyInput
                 placeholder="search game"
-                value={props.searchGamesPS}
+                value={props.searchGames}
                 clearSearch={props.clearSearch}
                 onChange={(e) => {
-                    props.setSearchGamesPS(e.target.value);
+                    props.setSearchGames(e.target.value);
                 }}
             />
             {/* <MySelect
                 value={props.sortSelected}
                 options={[
-                    { value: "title", name: "By title" },
-                    { value: "body", name: "By content" },
+                    { value: "name", name: "By name" },
+                    { value: "genre", name: "By genre" },
+                    { value: "releaseDates", name: "By release date" },
+                    { value: "developers", name: "By developers" },
+                    { value: "publishers", name: "By publishers" },
+
+
                 ]}
                 defaultValue="Sort By"
             /> */}
 
             <GameHeader platform={props.platform} />
             <div className="block-games">
-                {(props.searchGamesPS ? props.games : itemsShow).map((game, index) => {
+                {(props.searchGames ? props.games : itemsShow).map((game, index) => {
                     return (
                         <div key={index}>
                             <GameDetails
