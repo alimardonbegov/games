@@ -54,12 +54,6 @@ body {
     height: 87vh;
 }
 
-.nav_block {
-    display: flex;
-    justify-content: space-between;
-    font-size: 1.8em;
-}
-
 .textBlock {
     font-family: "Orbitron", sans-serif;
     font-style: normal;
@@ -95,7 +89,6 @@ body {
     flex-direction: column;
     justify-content: space-between;
     padding: 1em;
-    /* margin: 1em; */
     min-width: 120px;
     max-height: 150px;
     min-height: 150px;

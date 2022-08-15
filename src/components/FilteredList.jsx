@@ -1,5 +1,4 @@
 import ListOfCards from "./ListOfCards";
-import { useState } from "react";
 
 function FilteredList(props) {
     if (props.doesShowGamesPS) {

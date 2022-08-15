@@ -51,15 +51,15 @@ function Home() {
         }, 500);
     }
 
-    function goBack() {
-        setSwitchPage(false);
-        setSearchGames("");
-        setDoesShowGames({
-            ps: false,
-            xb: false,
-            sw: false,
-        });
-    }
+    // function goBack() {
+    //     setSwitchPage(false);
+    //     setSearchGames("");
+    //     setDoesShowGames({
+    //         ps: false,
+    //         xb: false,
+    //         sw: false,
+    //     });
+    // }
 
     const searchedGames = useMemo(() => {
         const ps = listOfGames.ps.filter((game) => game.name.toLowerCase().includes(searchGames));
@@ -70,7 +70,17 @@ function Home() {
 
     return (
         <div className="App">
-            <Navbar />
+            <Navbar
+                onClickHomePage={() => {
+                    setSwitchPage(false);
+                    setSearchGames("");
+                    setDoesShowGames({
+                        ps: false,
+                        xb: false,
+                        sw: false,
+                    });
+                }}
+            />
             {isLoading === true ? (
                 <Loader />
             ) : !switchPage ? (
@@ -90,7 +100,6 @@ function Home() {
                 </div>
             ) : (
                 <FilteredList
-                    onClick={goBack}
                     doesShowGamesPS={doesShowGames.ps}
                     doesShowGamesXbox={doesShowGames.xb}
                     doesShowGamesSwitch={doesShowGames.sw}
