@@ -1,4 +1,4 @@
-import GameDetails from "./CardGame";
+import GameDetails from "../components/UI/cardGame/CardGame";
 import MyButton from "./UI/myButton/MyButton";
 import { useEffect, useRef, useState } from "react";
 import MyInput from "./UI/myInput/MuInput";
@@ -33,34 +33,18 @@ function ListOfCards(props) {
 
     return (
         <div>
-            <MyButton
-                style={{
-                    margin: "1em 3em 0 0",
-                }}
-                onClick={props.onClick}
-            >
-                Go back
-            </MyButton>
             <MyInput
                 placeholder="search game"
-                value={props.searchGamesPS}
+                value={props.searchGames}
                 clearSearch={props.clearSearch}
                 onChange={(e) => {
-                    props.setSearchGamesPS(e.target.value);
+                    props.setSearchGames(e.target.value);
                 }}
             />
-            {/* <MySelect
-                value={props.sortSelected}
-                options={[
-                    { value: "title", name: "By title" },
-                    { value: "body", name: "By content" },
-                ]}
-                defaultValue="Sort By"
-            /> */}
 
             <GameHeader platform={props.platform} />
             <div className="block-games">
-                {(props.searchGamesPS ? props.games : itemsShow).map((game, index) => {
+                {(props.searchGames ? props.games : itemsShow).map((game, index) => {
                     return (
                         <div key={index}>
                             <GameDetails

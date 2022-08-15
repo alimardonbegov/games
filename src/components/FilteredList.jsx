@@ -1,44 +1,47 @@
-import ListOfGames from "./ListOfGames";
-import { useState } from "react";
+import ListOfCards from "./ListOfCards";
 
-function ResultList(props) {
+function FilteredList(props) {
     if (props.doesShowGamesPS) {
         return (
-            <ListOfGames
+            <ListOfCards
                 key={"PS"}
                 onClick={props.onClick}
                 platform="PS"
                 games={props.listOfGamesPS}
-                searchGamesPS={props.searchGamesPS}
-                setSearchGamesPS={props.setSearchGamesPS}
+                searchGames={props.searchGames}
+                setSearchGames={props.setSearchGames}
                 clearSearch={props.clearSearch}
             />
         );
     }
+
     if (props.doesShowGamesXbox) {
         return (
-            <ListOfGames
+            <ListOfCards
                 key={"Xbox"}
                 onClick={props.onClick}
                 platform="Xbox"
                 games={props.listOfGamesXbox}
                 searchGames={props.searchGames}
                 setSearchGames={props.setSearchGames}
+                clearSearch={props.clearSearch}
             />
         );
     }
+
     if (props.doesShowGamesSwitch) {
         return (
-            <ListOfGames
+            <ListOfCards
                 key={"Switch"}
                 onClick={props.onClick}
                 platform="Switch"
                 games={props.listOfGamesSwitch}
                 searchGames={props.searchGames}
                 setSearchGames={props.setSearchGames}
+                clearSearch={props.clearSearch}
             />
         );
     }
 }
 
-export default ResultList;
+export default FilteredList;

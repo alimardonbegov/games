@@ -1,5 +1,5 @@
-import MyButton from "./UI/myButton/MyButton";
-import switchLogo from "../images/switch.png";
+import MyButton from "../myButton/MyButton";
+import switchLogo from "../../../images/switch.png";
 
 function GameDetails(props) {
     return (

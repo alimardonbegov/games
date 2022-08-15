@@ -1,19 +1,18 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import cl from "./Navbar.module.css";
 
-function Navbar() {
+function Navbar(props) {
     return (
-        <div className="navbar">
-            <div className="nav_block">
-                <div className="nav_link">
-                    <Link to="/home"> Home</Link>
-                </div>
-                <div className="nav_link">
-                    <Link to="/about"> About</Link>
-                </div>
-                <div className="nav_link">
-                    <Link to="/contact"> Contact</Link>
-                </div>
+        <div className={cl.navBlock}>
+            <div onClick={props.onClickHomePage}>
+                <Link to="/home"> Home</Link>
+            </div>
+            <div>
+                <Link to="/about"> About</Link>
+            </div>
+            <div>
+                <Link to="/contact"> Contact</Link>
             </div>
         </div>
     );
