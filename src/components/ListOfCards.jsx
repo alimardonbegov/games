@@ -1,8 +1,6 @@
-import GameDetails from "../components/UI/cardGame/CardGame";
-import MyButton from "./UI/myButton/MyButton";
-import { useEffect, useRef, useState } from "react";
+import GameDetails from "./GameDetails";
+import { useEffect, useState } from "react";
 import MyInput from "./UI/myInput/MuInput";
-import MySelect from "./UI/select/MySelect";
 import GameHeader from "./UI/gameHeader/GameHeader";
 
 function ListOfCards(props) {
@@ -54,6 +52,7 @@ function ListOfCards(props) {
                                 genre={game.genre}
                                 developer={game.developers}
                                 publisher={game.publishers}
+                                onClick={() => props.onClick(game)}
                             />
                         </div>
                     );

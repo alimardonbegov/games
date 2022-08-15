@@ -4,26 +4,23 @@ import Navbar from "../components/UI/navbar/Navbar";
 import Background from "../components/UI/background/Background";
 import GameService from "../API/GameService";
 import FilteredList from "../components/FilteredList";
-import Loader from "../components/UI/loader/Loader";
 import { createPlatform } from "../utils/platforms";
-import PSLoader from "../components/UI/psLoader/PSLoader";
-import XbLoader from "../components/UI/xbLoader/XbLoader";
-import SwLoader from "../components/UI/swLoader/SwLoader";
 import Loading from "../components/Loading";
+import { useNavigate } from "react-router-dom";
+import GamePage from "../components/GamePage";
 
 function Home() {
+    const navigate = useNavigate();
     const [listOfGames, setListOfGames] = useState({
         ps: [],
         xb: [],
         sw: [],
     });
-
     const [doesShowGames, setDoesShowGames] = useState({
         ps: false,
         xb: false,
         sw: false,
     });
-
     const [isLoading, setIsloading] = useState({
         ps: false,
         xb: false,
@@ -47,6 +44,13 @@ function Home() {
 
     createPlatform(listOfGames);
 
+    const searchedGames = useMemo(() => {
+        const ps = listOfGames.ps.filter((game) => game.name.toLowerCase().includes(searchGames));
+        const xb = listOfGames.xb.filter((game) => game.name.toLowerCase().includes(searchGames));
+        const sw = listOfGames.sw.filter((game) => game.name.toLowerCase().includes(searchGames));
+        return { ps, xb, sw };
+    }, [listOfGames, searchGames]);
+
     function showGames(platform) {
         setIsloading((prev) => {
             return { ...prev, [platform]: true };
@@ -62,20 +66,31 @@ function Home() {
             });
         }, 2000);
     }
-    console.log(isLoading);
 
-    const searchedGames = useMemo(() => {
-        const ps = listOfGames.ps.filter((game) => game.name.toLowerCase().includes(searchGames));
-        const xb = listOfGames.xb.filter((game) => game.name.toLowerCase().includes(searchGames));
-        const sw = listOfGames.sw.filter((game) => game.name.toLowerCase().includes(searchGames));
+    // opening game cards (check why we can't use object)
+    const [isOpenedCard, setIsOpenedCard] = useState(false);
+    const [gameId, setGameId] = useState("");
+    const [gameName, setGameName] = useState("");
+    const [gameGenre, setGameGenre] = useState("");
+    const [gameDevelopers, setGameDevelopers] = useState("");
+    const [gamePublishers, setGamePublishers] = useState("");
+    const [gameReleaseDates, setGameReleaseDates] = useState("");
 
-        return { ps, xb, sw };
-    }, [listOfGames, searchGames]);
+    function openGameCard(game) {
+        setIsOpenedCard(true);
+        setGameId(game.id);
+        setGameName(game.name);
+        setGameGenre(game.genre[0]);
+        setGameDevelopers(game.developers[0]);
+        setGamePublishers(game.publishers[0]);
+        setGameReleaseDates(game.releaseDates.Europe);
+    }
 
     return (
         <div className="App">
             <Navbar
                 onClickHomePage={() => {
+                    setIsOpenedCard(false);
                     setSwitchPage(false);
                     setSearchGames("");
                     setDoesShowGames({
@@ -102,7 +117,7 @@ function Home() {
                     />
                     <Background />
                 </div>
-            ) : (
+            ) : !isOpenedCard ? (
                 <FilteredList
                     doesShowGamesPS={doesShowGames.ps}
                     doesShowGamesXbox={doesShowGames.xb}
@@ -113,6 +128,16 @@ function Home() {
                     searchGames={searchGames}
                     setSearchGames={setSearchGames}
                     clearsearch={() => setSearchGames("")}
+                    onClick={openGameCard}
+                />
+            ) : (
+                <GamePage
+                    gameId={gameId}
+                    gameName={gameName}
+                    gameGenre={gameGenre}
+                    gameDevelopers={gameDevelopers}
+                    gamePublishers={gamePublishers}
+                    gameReleaseDates={gameReleaseDates}
                 />
             )}
         </div>

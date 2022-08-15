@@ -1,5 +1,5 @@
-import MyButton from "../myButton/MyButton";
-import switchLogo from "../../../images/switch.png";
+import MyButton from "./UI/myButton/MyButton";
+import switchLogo from "../images/switch.png";
 
 function GameDetails(props) {
     return (
@@ -22,7 +22,6 @@ function GameDetails(props) {
                         </div>
                     </div>
                 )}
-
                 {props.platform.length === 2 &&
                     props.platform[0] === "PS" &&
                     props.platform[1] === "Xbox" && (
@@ -35,7 +34,6 @@ function GameDetails(props) {
                             </div>
                         </div>
                     )}
-
                 {props.platform.length === 2 &&
                     props.platform[0] === "PS" &&
                     props.platform[1] === "Switch" && (
@@ -48,7 +46,6 @@ function GameDetails(props) {
                             </div>
                         </div>
                     )}
-
                 {props.platform.length === 3 && props.platform[0] === "PS" && (
                     <div className="game-detail-plt">
                         <div className="logo-platform">
@@ -62,7 +59,9 @@ function GameDetails(props) {
                         </div>
                     </div>
                 )}
+
                 {/* Check icons of Xbox  */}
+
                 {props.platform.length === 1 && props.platform[0] === "Xbox" && (
                     <div className="game-detail-plt">
                         <div className="logo-platform">
@@ -118,7 +117,6 @@ function GameDetails(props) {
                         </div>
                     </div>
                 )}
-
                 {props.platform.length === 2 &&
                     props.platform[0] === "Switch" &&
                     props.platform[1] === "PS" && (
@@ -160,7 +158,9 @@ function GameDetails(props) {
                     <p>{props.genre}</p>
                 </div>
                 <div className="">
-                    <MyButton style={{ width: "100%" }}> Open </MyButton>
+                    <MyButton onClick={props.onClick} style={{ width: "100%" }}>
+                        Open
+                    </MyButton>
                 </div>
             </div>
         </div>
