@@ -8,12 +8,6 @@ $colors: (
     "background": rgb(20, 20, 20),
 );
 
-html,
-body {
-    height: 100%;
-    background: map-get($colors, "background");
-}
-
 .loader {
     height: 100%;
     display: flex;

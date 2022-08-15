@@ -2,7 +2,7 @@ import cl from "./Background.module.css";
 
 function Background() {
     return (
-        <div>
+        <div className={cl.area}>
             <ul className={cl.circles}>
                 <li></li>
                 <li></li>

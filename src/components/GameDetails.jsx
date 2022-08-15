@@ -10,7 +10,7 @@ function GameDetails(props) {
             </div>
             <div className="game-detail">
                 <p>Developers: {props.developer}.</p>
-                <p>Publisher: {props.publisher}.</p>
+                <p>Release: {props.releaseDatesEurope}.</p>
             </div>
             <div className="game-detail-bottom">
                 {/* Check icons of PS  */}

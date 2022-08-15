@@ -1,17 +1,6 @@
 .gameHeader {
     text-align: center;
-    background-image: linear-gradient(
-        45deg,
-        #ff0000,
-        #ff7300,
-        #fffb00,
-        #48ff00,
-        #00ffd5,
-        #002bff,
-        #7a00ff,
-        #ff00c8,
-        #ff0000
-    );
+    background-image: linear-gradient(90deg, #2e6db4, #107c10, #fe0016, #2e6db4);
     background-clip: border-box;
     background-size: 200% auto;
     -webkit-background-clip: text;

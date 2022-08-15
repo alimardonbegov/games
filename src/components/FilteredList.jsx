@@ -6,7 +6,7 @@ function FilteredList(props) {
             <ListOfCards
                 key={"PS"}
                 onClick={props.onClick}
-                platform="PS"
+                namePlatform="PS"
                 games={props.listOfGamesPS}
                 searchGames={props.searchGames}
                 setSearchGames={props.setSearchGames}
@@ -20,7 +20,7 @@ function FilteredList(props) {
             <ListOfCards
                 key={"Xbox"}
                 onClick={props.onClick}
-                platform="Xbox"
+                namePlatform="Xbox"
                 games={props.listOfGamesXbox}
                 searchGames={props.searchGames}
                 setSearchGames={props.setSearchGames}
@@ -34,7 +34,7 @@ function FilteredList(props) {
             <ListOfCards
                 key={"Switch"}
                 onClick={props.onClick}
-                platform="Switch"
+                namePlatform="Switch"
                 games={props.listOfGamesSwitch}
                 searchGames={props.searchGames}
                 setSearchGames={props.setSearchGames}

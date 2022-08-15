@@ -40,7 +40,7 @@ function ListOfCards(props) {
                 }}
             />
 
-            <GameHeader platform={props.platform} />
+            <GameHeader namePlatform={props.namePlatform} />
             <div className="block-games">
                 {(props.searchGames ? props.games : itemsShow).map((game, index) => {
                     return (
@@ -51,7 +51,6 @@ function ListOfCards(props) {
                                 releaseDatesEurope={game.releaseDates.Europe}
                                 genre={game.genre}
                                 developer={game.developers}
-                                publisher={game.publishers}
                                 onClick={() => props.onClick(game)}
                             />
                         </div>

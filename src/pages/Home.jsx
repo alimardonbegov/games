@@ -6,11 +6,9 @@ import GameService from "../API/GameService";
 import FilteredList from "../components/FilteredList";
 import { createPlatform } from "../utils/platforms";
 import Loading from "../components/Loading";
-import { useNavigate } from "react-router-dom";
 import GamePage from "../components/GamePage";
 
 function Home() {
-    const navigate = useNavigate();
     const [listOfGames, setListOfGames] = useState({
         ps: [],
         xb: [],
