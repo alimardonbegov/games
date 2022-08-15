@@ -6,6 +6,10 @@ import GameService from "../API/GameService";
 import FilteredList from "../components/FilteredList";
 import Loader from "../components/UI/loader/Loader";
 import { createPlatform } from "../utils/platforms";
+import PSLoader from "../components/UI/psLoader/PSLoader";
+import XbLoader from "../components/UI/xbLoader/XbLoader";
+import SwLoader from "../components/UI/swLoader/SwLoader";
+import Loading from "../components/Loading";
 
 function Home() {
     const [listOfGames, setListOfGames] = useState({
@@ -20,7 +24,11 @@ function Home() {
         sw: false,
     });
 
-    const [isLoading, setIsloading] = useState(false);
+    const [isLoading, setIsloading] = useState({
+        ps: false,
+        xb: false,
+        sw: false,
+    });
     const [switchPage, setSwitchPage] = useState(false);
     const [searchGames, setSearchGames] = useState("");
 
@@ -40,31 +48,27 @@ function Home() {
     createPlatform(listOfGames);
 
     function showGames(platform) {
-        setIsloading(true);
+        setIsloading((prev) => {
+            return { ...prev, [platform]: true };
+        });
+
         setTimeout(() => {
             setDoesShowGames((prevValue) => {
                 return { ...prevValue, [platform]: true };
             });
-            console.log(doesShowGames.ps);
             setSwitchPage(!switchPage);
-            setIsloading(false);
-        }, 500);
+            setIsloading((prev) => {
+                return { ...prev, [platform]: false };
+            });
+        }, 2000);
     }
-
-    // function goBack() {
-    //     setSwitchPage(false);
-    //     setSearchGames("");
-    //     setDoesShowGames({
-    //         ps: false,
-    //         xb: false,
-    //         sw: false,
-    //     });
-    // }
+    console.log(isLoading);
 
     const searchedGames = useMemo(() => {
         const ps = listOfGames.ps.filter((game) => game.name.toLowerCase().includes(searchGames));
         const xb = listOfGames.xb.filter((game) => game.name.toLowerCase().includes(searchGames));
         const sw = listOfGames.sw.filter((game) => game.name.toLowerCase().includes(searchGames));
+
         return { ps, xb, sw };
     }, [listOfGames, searchGames]);
 
@@ -81,9 +85,9 @@ function Home() {
                     });
                 }}
             />
-            {isLoading === true ? (
-                <Loader />
-            ) : !switchPage ? (
+
+            <Loading loadingPage={isLoading} />
+            {!isLoading.ps && !isLoading.xb && !isLoading.sw && !switchPage ? (
                 <div>
                     <div className="textBlock">
                         Here you can find the list of games depends on your platform
@@ -92,9 +96,9 @@ function Home() {
                         action1btn={() => showGames("ps")}
                         action2btn={() => showGames("xb")}
                         action3btn={() => showGames("sw")}
-                        textAction1={"PS"}
-                        textAction2={"Xbox"}
-                        textAction3={"Switch"}
+                        textValue1={"PS"}
+                        textValue2={"Xbox"}
+                        textValue3={"Switch"}
                     />
                     <Background />
                 </div>
@@ -108,7 +112,7 @@ function Home() {
                     listOfGamesSwitch={searchedGames.sw}
                     searchGames={searchGames}
                     setSearchGames={setSearchGames}
-                    clearSearch={() => setSearchGames("")}
+                    clearsearch={() => setSearchGames("")}
                 />
             )}
         </div>

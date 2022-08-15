@@ -36,7 +36,7 @@ function ListOfCards(props) {
             <MyInput
                 placeholder="search game"
                 value={props.searchGames}
-                clearSearch={props.clearSearch}
+                clearsearch={props.clearSearch}
                 onChange={(e) => {
                     props.setSearchGames(e.target.value);
                 }}

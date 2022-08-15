@@ -1,0 +1,142 @@
+/* Feel free to use this code snippet for your own projects 
+   The xBox logo serves as a placeholder here as it was the main inspiration for this css project. 
+*/
+
+/* Just some basic setting for our body and html to fill the whole screen */
+.containerXbLoader,
+.blockXbLoader {
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+}
+
+/* Setting a background-gradient using colorzillas gradient generator 
+   http://www.colorzilla.com/gradient-editor/ */
+// .blockXbLoader {
+//     background: #5fce2e;
+//     background: -webkit-gradient(
+//         radial,
+//         center center,
+//         0px,
+//         center center,
+//         100%,
+//         color-stop(0%, #5fce2e),
+//         color-stop(100%, #01a302)
+//     );
+//     background: -webkit-radial-gradient(center, ellipse cover, #5fce2e 0%, #01a302 100%);
+//     background: radial-gradient(ellipse at center, #5fce2e 0%, #01a302 100%);
+// }
+
+/* Align our wrapper box 
+   http://zerosixthree.se/vertical-align-anything-with-just-3-lines-of-css/
+*/
+.vaXbLoader {
+    margin: 0 auto 0;
+    text-align: center;
+    width: 198px;
+    margin: 0 auto 0;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+/* Just some small defininitions for the logo */
+.xboxImg {
+    width: 50px;
+    height: 50px;
+    margin: 0 0 50px 0;
+}
+
+.loaderXbLoader {
+    float: left; /* Align circles next to each other */
+    display: block; /* Cause span element */
+    width: 16px;
+    height: 16px; /* Some spacing , 25px on the left and right */
+    margin: 0 25px; /* Adding some spacing inbetween */
+    border-radius: 50%; /* makes the circles round */
+    -webkit-animation-name: xbox; /* Animations name */
+    animation-name: xbox;
+    -webkit-animation-duration: 1.5s; /* The duration of our animation */
+    animation-duration: 1.5s;
+    -webkit-animation-iteration-count: infinite; /* Amount of Looping */
+    animation-iteration-count: infinite;
+    -webkit-animation-delay: 0.5s; /* A small delay */
+    animation-delay: 0.5s;
+}
+
+.loaderXbLoader:nth-child(2) {
+    -webkit-animation-delay: 0.75s; /* we delay the second circle by a short time */
+    animation-delay: 0.75s; /* so that it starts at a later point */
+}
+
+.loaderXbLoader:nth-child(3) {
+    -webkit-animation-delay: 1s; /* and the same for circle no 3 */
+    animation-delay: 1s;
+}
+
+@-webkit-keyframes xbox {
+    /* the animation - animation name */
+    0% {
+        opacity: 0; /* Starting off invisible */
+        -webkit-transform: scale3d(0, 0, 0); /* this makes the circles go 0x0px */
+        transform: scale3d(0, 0, 0);
+    }
+
+    20% {
+        opacity: 1; /* Quickly fades in the circles */
+        /* This is the part that the animation lives of
+           While growing we are adding a 25px inside shadow
+           which is slightly blurred by 2px */
+        -webkit-box-shadow: inset 0px 0px 2px 25px rgba(255, 255, 255, 1);
+        -moz-box-shadow: inset 0px 0px 2px 25px rgba(255, 255, 255, 1);
+        box-shadow: inset 0px 0px 2px 25px rgba(255, 255, 255, 1);
+    }
+
+    55% {
+        opacity: 1; /* Ensures that our opacity is staying the same */
+    }
+
+    75% {
+        opacity: 0; /* Fading out again */
+        -webkit-transform: scale3d(1, 1, 1); /* Sizing our circle to its original size 16x16px */
+        transform: scale3d(1, 1, 1);
+        /* lowering our inner shadow, which results in a fading effect from the inside to the outside*/
+        -webkit-box-shadow: inset 0px 0px 0px 1px rgba(255, 255, 255, 1);
+        -moz-box-shadow: inset 0px 0px 0px 1px rgba(255, 255, 255, 1);
+        box-shadow: inset 0px 0px 0px 1px rgba(255, 255, 255, 1);
+    }
+
+    100% {
+        /* Adding a delay for the animation to wait from 75% - 100% 
+           This equals 0.375s */
+        opacity: 0;
+    }
+}
+
+@keyframes xbox {
+    0% {
+        opacity: 0;
+        transform: scale3d(0, 0, 0);
+    }
+
+    20% {
+        opacity: 1;
+        -moz-box-shadow: inset 0px 0px 2px 25px rgba(255, 255, 255, 1);
+        box-shadow: inset 0px 0px 2px 25px rgba(255, 255, 255, 1);
+    }
+
+    55% {
+        opacity: 1;
+    }
+
+    75% {
+        opacity: 0;
+        transform: scale3d(1, 1, 1);
+        -moz-box-shadow: inset 0px 0px 0px 1px rgba(255, 255, 255, 1);
+        box-shadow: inset 0px 0px 0px 1px rgba(255, 255, 255, 1);
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
