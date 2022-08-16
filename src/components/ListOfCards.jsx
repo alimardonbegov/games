@@ -2,6 +2,7 @@ import GameCard from "./UI/gameCard/GameCard";
 import { useEffect, useState } from "react";
 import MyInput from "./UI/myInput/MuInput";
 import GameHeader from "./UI/gameHeader/GameHeader";
+import { CSSTransition, TransitionGroup } from "react-transition-group";
 
 function ListOfCards(props) {
     const [itemsOnPage, setItemsOnPage] = useState(18);
@@ -34,29 +35,33 @@ function ListOfCards(props) {
             <MyInput
                 placeholder="search game"
                 value={props.searchGames}
-                clearsearch={props.clearSearch}
+                clearSearch={props.clearSearch}
                 onChange={(e) => {
                     props.setSearchGames(e.target.value);
                 }}
             />
 
             <GameHeader namePlatform={props.namePlatform} />
-            <div className="block-games">
-                {(props.searchGames ? props.games : itemsShow).map((game, index) => {
-                    return (
-                        <div key={index}>
-                            <GameCard
-                                name={game.name}
-                                platform={game.platform}
-                                releaseDatesEurope={game.releaseDates.Europe}
-                                genre={game.genre}
-                                developer={game.developers}
-                                onClick={() => props.onClick(game)}
-                            />
-                        </div>
-                    );
-                })}
-            </div>
+            <TransitionGroup>
+                <div className="block-games">
+                    {(props.searchGames ? props.games : itemsShow).map((game, index) => {
+                        return (
+                            <div key={index}>
+                                <CSSTransition key={game.id} timeout={500} classNames="">
+                                    <GameCard
+                                        name={game.name}
+                                        platform={game.platform}
+                                        releaseDatesEurope={game.releaseDates.Europe}
+                                        genre={game.genre}
+                                        developer={game.developers}
+                                        onClick={() => props.onClick(game)}
+                                    />
+                                </CSSTransition>
+                            </div>
+                        );
+                    })}
+                </div>
+            </TransitionGroup>
         </div>
     );
 }

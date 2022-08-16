@@ -1,6 +1,6 @@
 import MyButton from "../myButton/MyButton";
 import switchLogo from "../../../images/switch.png";
-import cl from "./GameCard.module.css";
+import cl from "./GameCard.module.scss";
 
 function GameCard(props) {
     return (

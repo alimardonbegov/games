@@ -36,3 +36,10 @@
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
 }
+
+.block_one_game:hover {
+    background: linear-gradient(130deg, rgb(88, 46, 255) 0%, rgba(255, 255, 255, 0.818) 100%);
+    box-shadow: none;
+    color: black;
+    transition: 0.2s all ease-in-out;
+}

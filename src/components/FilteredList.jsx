@@ -10,7 +10,7 @@ function FilteredList(props) {
                 games={props.listOfGamesPS}
                 searchGames={props.searchGames}
                 setSearchGames={props.setSearchGames}
-                clearsearch={props.clearSearch}
+                clearSearch={props.clearSearch}
             />
         );
     }
@@ -24,7 +24,7 @@ function FilteredList(props) {
                 games={props.listOfGamesXbox}
                 searchGames={props.searchGames}
                 setSearchGames={props.setSearchGames}
-                clearsearch={props.clearSearch}
+                clearSearch={props.clearSearch}
             />
         );
     }
@@ -38,7 +38,7 @@ function FilteredList(props) {
                 games={props.listOfGamesSwitch}
                 searchGames={props.searchGames}
                 setSearchGames={props.setSearchGames}
-                clearsearch={props.clearSearch}
+                clearSearch={props.clearSearch}
             />
         );
     }

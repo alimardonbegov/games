@@ -21,8 +21,9 @@
     position: absolute;
     border: none;
     display: block;
-    width: 100px;
-    height: 25px;
+    width: 10em;
+    height: 70%;
+    font-size: large;
     border-radius: 10px;
     top: 0;
     bottom: 0;

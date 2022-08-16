@@ -126,7 +126,7 @@ function Home() {
                         listOfGamesSwitch={searchedGames.sw}
                         searchGames={searchGames}
                         setSearchGames={setSearchGames}
-                        clearsearch={() => setSearchGames("")}
+                        clearSearch={() => setSearchGames("")}
                         onClick={openGameCard}
                     />
                 ) : (
