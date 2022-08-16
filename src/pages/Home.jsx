@@ -66,6 +66,12 @@ function Home() {
         }, 2000);
     }
 
+    //opening exact page by navbar
+
+    // const [isHome, setIsHome] = useState(false);
+    // const [isAbout, setIsAbout] = useState(false);
+    // const [isContact, setIsContact] = useState(false);
+
     // opening game cards (check why we can't use object)
     const [isOpenedCard, setIsOpenedCard] = useState(false);
     const [gameId, setGameId] = useState("");

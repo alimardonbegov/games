@@ -96,3 +96,21 @@ body {
 .fa-xbox {
     color: #2ca243;
 }
+
+// show effect
+
+.textBlock,
+.bottom_btns,
+.list_of_cards {
+    opacity: 0;
+    animation: ani 2s forwards;
+}
+
+@keyframes ani {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
