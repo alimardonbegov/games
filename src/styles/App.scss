@@ -101,7 +101,8 @@ body {
 
 .textBlock,
 .bottom_btns,
-.list_of_cards {
+.list_of_cards,
+.game_descr {
     opacity: 0;
     animation: ani 2s forwards;
 }
@@ -113,4 +114,62 @@ body {
     100% {
         opacity: 1;
     }
+}
+
+// contact page
+
+.contact_links {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.logo_element {
+    width: 1.5em;
+    font-size: 100%;
+    color: #6442ffd0;
+}
+
+.block_link {
+    font-size: 0.8em;
+}
+
+// game page
+
+.game_page_block {
+    background-color: #6442ffd0;
+
+    border-radius: 20px;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    height: 60vh;
+}
+
+.game_page_colored {
+    height: 100%;
+    width: 55%;
+    margin: 3em;
+    font-size: 1.5em;
+}
+
+.game_page_img_block {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #111;
+    width: 35%;
+    margin: 3em;
+    border-radius: 20px;
+    & img {
+        height: 80%;
+    }
+}
+
+// top btn
+
+.block_top_btn {
+    display: flex;
+    justify-content: space-between;
 }

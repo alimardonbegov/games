@@ -5,9 +5,11 @@ import "./styles/App.scss";
 
 function App() {
     return (
-        <BrowserRouter>
-            <AppRouter />
-        </BrowserRouter>
+        <div>
+            <BrowserRouter>
+                <AppRouter />
+            </BrowserRouter>
+        </div>
     );
 }
 
