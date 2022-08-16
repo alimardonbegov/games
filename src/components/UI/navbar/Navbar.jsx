@@ -1,18 +1,18 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import cl from "./Navbar.module.css";
+import cl from "./Navbar.module.scss";
 
 function Navbar(props) {
     return (
         <div className={cl.navBlock}>
-            <div onClick={props.onClickHomePage}>
-                <Link to="/home"> Home</Link>
+            <div className={cl.navLink} onClick={props.onClickHomePage}>
+                <Link to="/home"> HOME</Link>
             </div>
-            <div>
-                <Link to="/about"> About</Link>
+            <div className={cl.navLink}>
+                <Link to="/about"> ABOUT</Link>
             </div>
-            <div>
-                <Link to="/contact"> Contact</Link>
+            <div className={cl.navLink}>
+                <Link to="/contact"> CONTACT</Link>
             </div>
         </div>
     );

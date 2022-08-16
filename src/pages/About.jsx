@@ -1,21 +1,19 @@
 import React from "react";
 import BottomButtons from "../components/BottomButtons";
 import Background from "../components/UI/background/Background";
+import Footer from "../components/UI/footer/Footer";
 import Navbar from "../components/UI/navbar/Navbar";
 
 function About() {
-    const nameAPI = ["PS API", "Xbox API", "Switch API"];
-
     return (
         <div className="App">
             <Navbar />
             <div className="textBlock">
-                This is the fun project created with{" "}
-                <span style={{ color: "rgba(50, 50, 50, 1)" }}>SAMPLEAPI.com</span>
+                The project was created with
+                <span style={{ color: "#6442ffd0" }}> SAMPLEAPI.com</span>
             </div>
-            <BottomButtons key={nameAPI} textButton={nameAPI} />
-            <footer> Designed and build by Alimardon </footer>
             <Background />
+            <Footer />
         </div>
     );
 }

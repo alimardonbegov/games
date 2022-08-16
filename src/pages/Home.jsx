@@ -7,6 +7,7 @@ import FilteredList from "../components/FilteredList";
 import { createPlatform } from "../utils/platforms";
 import Loading from "../components/Loading";
 import GamePage from "../components/GamePage";
+import Footer from "../components/UI/footer/Footer";
 
 function Home() {
     const [listOfGames, setListOfGames] = useState({
@@ -100,44 +101,45 @@ function Home() {
             />
 
             <Loading loadingPage={isLoading} />
-            {!isLoading.ps && !isLoading.xb && !isLoading.sw && !switchPage ? (
-                <div>
-                    <div className="textBlock">
-                        Here you can find the list of games depends on your platform
+            <div>
+                {!isLoading.ps && !isLoading.xb && !isLoading.sw && !switchPage ? (
+                    <div>
+                        <div className="textBlock">Find the game for your platform</div>
+                        <BottomButtons
+                            action1btn={() => showGames("ps")}
+                            action2btn={() => showGames("xb")}
+                            action3btn={() => showGames("sw")}
+                            textValue1={"PS"}
+                            textValue2={"Xbox"}
+                            textValue3={"Switch"}
+                        />
+                        <Background />
+                        <Footer />
                     </div>
-                    <BottomButtons
-                        action1btn={() => showGames("ps")}
-                        action2btn={() => showGames("xb")}
-                        action3btn={() => showGames("sw")}
-                        textValue1={"PS"}
-                        textValue2={"Xbox"}
-                        textValue3={"Switch"}
+                ) : !isOpenedCard ? (
+                    <FilteredList
+                        doesShowGamesPS={doesShowGames.ps}
+                        doesShowGamesXbox={doesShowGames.xb}
+                        doesShowGamesSwitch={doesShowGames.sw}
+                        listOfGamesPS={searchedGames.ps}
+                        listOfGamesXbox={searchedGames.xb}
+                        listOfGamesSwitch={searchedGames.sw}
+                        searchGames={searchGames}
+                        setSearchGames={setSearchGames}
+                        clearsearch={() => setSearchGames("")}
+                        onClick={openGameCard}
                     />
-                    <Background />
-                </div>
-            ) : !isOpenedCard ? (
-                <FilteredList
-                    doesShowGamesPS={doesShowGames.ps}
-                    doesShowGamesXbox={doesShowGames.xb}
-                    doesShowGamesSwitch={doesShowGames.sw}
-                    listOfGamesPS={searchedGames.ps}
-                    listOfGamesXbox={searchedGames.xb}
-                    listOfGamesSwitch={searchedGames.sw}
-                    searchGames={searchGames}
-                    setSearchGames={setSearchGames}
-                    clearsearch={() => setSearchGames("")}
-                    onClick={openGameCard}
-                />
-            ) : (
-                <GamePage
-                    gameId={gameId}
-                    gameName={gameName}
-                    gameGenre={gameGenre}
-                    gameDevelopers={gameDevelopers}
-                    gamePublishers={gamePublishers}
-                    gameReleaseDates={gameReleaseDates}
-                />
-            )}
+                ) : (
+                    <GamePage
+                        gameId={gameId}
+                        gameName={gameName}
+                        gameGenre={gameGenre}
+                        gameDevelopers={gameDevelopers}
+                        gamePublishers={gamePublishers}
+                        gameReleaseDates={gameReleaseDates}
+                    />
+                )}
+            </div>
         </div>
     );
 }

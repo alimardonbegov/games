@@ -1,23 +1,24 @@
-import MyButton from "./UI/myButton/MyButton";
-import switchLogo from "../images/switch.png";
+import MyButton from "../myButton/MyButton";
+import switchLogo from "../../../images/switch.png";
+import cl from "./GameCard.module.css";
 
-function GameDetails(props) {
+function GameCard(props) {
     return (
-        <div className="block-one-game">
-            <div className="game-name">
+        <div className={cl.block_one_game}>
+            <div className={cl.game_name}>
                 <h3>{props.name}</h3>
                 {/* <p> {props.releaseDatesEurope}</p> */}
             </div>
-            <div className="game-detail">
+            <div className={cl.game_detail}>
                 <p>Developers: {props.developer}.</p>
                 <p>Release: {props.releaseDatesEurope}.</p>
             </div>
-            <div className="game-detail-bottom">
+            <div className={cl.game_detail_bottom}>
                 {/* Check icons of PS  */}
 
                 {props.platform.length === 1 && props.platform[0] === "PS" && (
-                    <div className="game-detail-plt">
-                        <div className="logo-platform">
+                    <div className={cl.game_detail_plt}>
+                        <div className={cl.logo_platform}>
                             <i class="fa-brands fa-playstation"></i>
                         </div>
                     </div>
@@ -25,11 +26,11 @@ function GameDetails(props) {
                 {props.platform.length === 2 &&
                     props.platform[0] === "PS" &&
                     props.platform[1] === "Xbox" && (
-                        <div className="game-detail-plt">
-                            <div className="logo-platform">
+                        <div className={cl.game_detail_plt}>
+                            <div className={cl.logo_platform}>
                                 <i class="fa-brands fa-playstation"></i>
                             </div>
-                            <div className="logo-platform">
+                            <div className={cl.logo_platform}>
                                 <i class="fa-brands fa-xbox"></i>
                             </div>
                         </div>
@@ -37,24 +38,24 @@ function GameDetails(props) {
                 {props.platform.length === 2 &&
                     props.platform[0] === "PS" &&
                     props.platform[1] === "Switch" && (
-                        <div className="game-detail-plt">
-                            <div className="logo-platform">
+                        <div className={cl.game_detail_plt}>
+                            <div className={cl.logo_platform}>
                                 <i class="fa-brands fa-playstation"></i>
                             </div>
-                            <div className="logo-platform">
+                            <div className={cl.logo_platform}>
                                 <img style={{ width: "18px" }} src={switchLogo} alt="switch" />
                             </div>
                         </div>
                     )}
                 {props.platform.length === 3 && props.platform[0] === "PS" && (
-                    <div className="game-detail-plt">
-                        <div className="logo-platform">
+                    <div className={cl.game_detail_plt}>
+                        <div className={cl.logo_platform}>
                             <i class="fa-brands fa-playstation"></i>
                         </div>
-                        <div className="logo-platform">
+                        <div className={cl.logo_platform}>
                             <i class="fa-brands fa-xbox"></i>
                         </div>
-                        <div className="logo-platform">
+                        <div className={cl.logo_platform}>
                             <img style={{ width: "18px" }} src={switchLogo} alt="switch" />
                         </div>
                     </div>
@@ -63,8 +64,8 @@ function GameDetails(props) {
                 {/* Check icons of Xbox  */}
 
                 {props.platform.length === 1 && props.platform[0] === "Xbox" && (
-                    <div className="game-detail-plt">
-                        <div className="logo-platform">
+                    <div className={cl.game_detail_plt}>
+                        <div className={cl.logo_platform}>
                             <i class="fa-brands fa-xbox"></i>
                         </div>
                     </div>
@@ -73,11 +74,11 @@ function GameDetails(props) {
                 {props.platform.length === 2 &&
                     props.platform[0] === "Xbox" &&
                     props.platform[1] === "PS" && (
-                        <div className="game-detail-plt">
-                            <div className="logo-platform">
+                        <div className={cl.game_detail_plt}>
+                            <div className={cl.logo_platform}>
                                 <i class="fa-brands fa-xbox"></i>
                             </div>
-                            <div className="logo-platform">
+                            <div className={cl.logo_platform}>
                                 <i class="fa-brands fa-playstation"></i>
                             </div>
                         </div>
@@ -85,24 +86,24 @@ function GameDetails(props) {
                 {props.platform.length === 2 &&
                     props.platform[0] === "Xbox" &&
                     props.platform[1] === "Switch" && (
-                        <div className="game-detail-plt">
-                            <div className="logo-platform">
+                        <div className={cl.game_detail_plt}>
+                            <div className={cl.logo_platform}>
                                 <i class="fa-brands fa-xbox"></i>
                             </div>
-                            <div className="logo-platform">
+                            <div className={cl.logo_platform}>
                                 <img style={{ width: "18px" }} src={switchLogo} alt="switch" />
                             </div>
                         </div>
                     )}
                 {props.platform.length === 3 && props.platform[0] === "Xbox" && (
-                    <div className="game-detail-plt">
-                        <div className="logo-platform">
+                    <div className={cl.game_detail_plt}>
+                        <div className={cl.logo_platform}>
                             <i class="fa-brands fa-xbox"></i>
                         </div>
-                        <div className="logo-platform">
+                        <div className={cl.logo_platform}>
                             <i class="fa-brands fa-playstation"></i>
                         </div>
-                        <div className="logo-platform">
+                        <div className={cl.logo_platform}>
                             <img style={{ width: "18px" }} src={switchLogo} alt="switch" />
                         </div>
                     </div>
@@ -111,8 +112,8 @@ function GameDetails(props) {
                 {/* Check icons Switch games */}
 
                 {props.platform.length === 1 && props.platform[0] === "Switch" && (
-                    <div className="game-detail-plt">
-                        <div className="logo-platform">
+                    <div className={cl.game_detail_plt}>
+                        <div className={cl.logo_platform}>
                             <img style={{ width: "18px" }} src={switchLogo} alt="switch" />
                         </div>
                     </div>
@@ -120,11 +121,11 @@ function GameDetails(props) {
                 {props.platform.length === 2 &&
                     props.platform[0] === "Switch" &&
                     props.platform[1] === "PS" && (
-                        <div className="game-detail-plt">
-                            <div className="logo-platform">
+                        <div className={cl.game_detail_plt}>
+                            <div className={cl.logo_platform}>
                                 <img style={{ width: "18px" }} src={switchLogo} alt="switch" />
                             </div>
-                            <div className="logo-platform">
+                            <div className={cl.logo_platform}>
                                 <i class="fa-brands fa-playstation"></i>
                             </div>
                         </div>
@@ -132,24 +133,24 @@ function GameDetails(props) {
                 {props.platform.length === 2 &&
                     props.platform[0] === "Switch" &&
                     props.platform[1] === "Xbox" && (
-                        <div className="game-detail-plt">
-                            <div className="logo-platform">
+                        <div className={cl.game_detail_plt}>
+                            <div className={cl.logo_platform}>
                                 <img style={{ width: "18px" }} src={switchLogo} alt="switch" />
                             </div>
-                            <div className="logo-platform">
+                            <div className={cl.logo_platform}>
                                 <i class="fa-brands fa-xbox"></i>
                             </div>
                         </div>
                     )}
                 {props.platform.length === 3 && props.platform[0] === "Switch" && (
-                    <div className="game-detail-plt">
-                        <div className="logo-platform">
+                    <div className={cl.game_detail_plt}>
+                        <div className={cl.logo_platform}>
                             <img style={{ width: "18px" }} src={switchLogo} alt="switch" />
                         </div>
-                        <div className="logo-platform">
+                        <div className={cl.logo_platform}>
                             <i class="fa-brands fa-playstation"></i>
                         </div>
-                        <div className="logo-platform">
+                        <div className={cl.logo_platform}>
                             <i class="fa-brands fa-xbox"></i>
                         </div>
                     </div>
@@ -167,4 +168,4 @@ function GameDetails(props) {
     );
 }
 
-export default GameDetails;
+export default GameCard;

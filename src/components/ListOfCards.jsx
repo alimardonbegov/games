@@ -1,4 +1,4 @@
-import GameDetails from "./GameDetails";
+import GameCard from "./UI/gameCard/GameCard";
 import { useEffect, useState } from "react";
 import MyInput from "./UI/myInput/MuInput";
 import GameHeader from "./UI/gameHeader/GameHeader";
@@ -45,7 +45,7 @@ function ListOfCards(props) {
                 {(props.searchGames ? props.games : itemsShow).map((game, index) => {
                     return (
                         <div key={index}>
-                            <GameDetails
+                            <GameCard
                                 name={game.name}
                                 platform={game.platform}
                                 releaseDatesEurope={game.releaseDates.Europe}

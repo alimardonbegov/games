@@ -9,13 +9,17 @@ a {
 }
 
 body {
+    padding: 0 calc(20px - (100vw - 100%)) 0 0;
     background-color: black;
-    background-image: url("../images/img1.jpg");
+    // background-image: url("../images/img1.jpg");
+    background-attachment: fixed;
     background-size: cover;
+    background-repeat: no-repeat;
     color: white;
     font-family: "Roboto", sans-serif;
     font-size: 1.2em;
     position: relative;
+    height: 100vh;
 }
 
 @media (max-width: 1199px) and (min-width: 992px) {
@@ -48,10 +52,7 @@ body {
 
 .App {
     padding: 1em 20em;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    height: 87vh;
+    height: 95vh;
 }
 
 .textBlock {
@@ -59,9 +60,11 @@ body {
     font-style: normal;
     font-weight: 700;
     line-height: 1.2em;
-    /* margin-top: 3em; */
-    width: 60%;
+    margin-top: 3em;
+    width: 63%;
     font-size: 4em;
+    display: fixed;
+    bottom: 10;
 }
 
 .bottom_btns {
@@ -82,43 +85,6 @@ body {
     margin-top: 2em;
 }
 
-.block-one-game {
-    border-radius: 10px;
-    background: rgba(17, 17, 17, 0.5);
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    padding: 1em;
-    min-width: 120px;
-    max-height: 150px;
-    min-height: 150px;
-}
-.game-name {
-    width: 100%;
-}
-
-.game-detail {
-    margin-top: 0.5em;
-}
-
-.game-detail-plt {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-}
-
-.logo-platform {
-    width: 100%;
-    display: flex;
-    align-items: center;
-}
-
-.game-detail-bottom {
-    font-size: 0.8em;
-    margin-top: 0.5em;
-    align-items: center;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-}
 .fa-brands {
     font-size: 18px;
 }

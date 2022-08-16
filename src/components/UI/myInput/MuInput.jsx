@@ -6,7 +6,7 @@ function MyInput(props) {
         <form className={cl.searchForm}>
             <input className={cl.myInput} {...props} />
             <button onClick={props.clearSearch} className={cl.inputBtn} type="reset">
-                x
+                <i class="fa-solid fa-delete-left"></i>
             </button>
         </form>
     );

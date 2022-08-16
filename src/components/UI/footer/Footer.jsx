@@ -2,11 +2,7 @@ import React from "react";
 import cl from "./Footer.module.css";
 
 function Footer() {
-    return (
-        <div className={cl.footer}>
-            <footer> Designed and build by Alimardon </footer>
-        </div>
-    );
+    return <footer className={cl.footer}> Designed and build by Alimardon </footer>;
 }
 
 export default Footer;

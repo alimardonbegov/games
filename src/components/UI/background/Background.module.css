@@ -1,7 +1,7 @@
 .context {
     width: 100%;
     position: sticky;
-    top: 50vh;
+    top: 100vh;
 }
 
 .context h1 {
@@ -26,7 +26,7 @@
     list-style: none;
     width: 20px;
     height: 20px;
-    background: rgba(255, 255, 255, 0.2);
+    background: rgba(100, 60, 255, 1);
     animation: animate 25s linear infinite;
     bottom: -150px;
 }
