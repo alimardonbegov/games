@@ -312,7 +312,7 @@ body {
 
 @media (max-width: 546px) {
     .App {
-        padding: 1em 2em;
+        padding: 1em 1em;
     }
     .block-games {
         display: grid;
@@ -343,6 +343,7 @@ body {
         height: auto;
         width: auto;
         margin: 20px 20px 0px;
+        font-size: 1.2em;
     }
 
     .game_page_img_block {
