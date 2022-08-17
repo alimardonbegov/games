@@ -42,7 +42,7 @@ function ListOfCards(props) {
             {itemsShow.length === 0 || props.games.length !== 0 ? (
                 <h1 style={{ textAlign: "center" }}>{props.namePlatform} games </h1>
             ) : (
-                <h1 style={{ textAlign: "center" }}>There is no such games </h1>
+                <h1 style={{ textAlign: "center" }}>There is no such game </h1>
             )}
 
             <div className="block-games">

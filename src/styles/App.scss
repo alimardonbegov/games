@@ -257,11 +257,11 @@ body {
         font-size: 1.5em;
     }
     .game_page_img_block {
-        width: 300px;
-    }
-    & img {
-        width: 80%;
-        height: auto;
+        width: 350px;
+        & img {
+            width: 100%;
+            height: auto;
+        }
     }
 
     .block_top_btn {
