@@ -6,10 +6,18 @@
     flex-direction: column;
     justify-content: space-between;
     padding: 1em;
-    min-width: 120px;
-    max-height: 150px;
-    min-height: 150px;
+    min-width: 8.5em;
+    max-height: 9.5em;
+    min-height: 9.5em;
 }
+
+.block_one_game:hover {
+    background: linear-gradient(130deg, rgb(88, 46, 255) 0%, rgba(255, 255, 255, 0.818) 100%);
+    box-shadow: none;
+    color: black;
+    transition: 0.2s all ease-in-out;
+}
+
 .game_name {
     width: 100%;
 }
@@ -37,9 +45,25 @@
     grid-template-columns: 1fr 1fr 1fr;
 }
 
-.block_one_game:hover {
-    background: linear-gradient(130deg, rgb(88, 46, 255) 0%, rgba(255, 255, 255, 0.818) 100%);
-    box-shadow: none;
-    color: black;
-    transition: 0.2s all ease-in-out;
+.logo_switch {
+    width: 1.3em;
+}
+
+@media (max-width: 991px) and (min-width: 547px) {
+    .block_one_game {
+        padding: 2em;
+    }
+}
+
+@media (max-width: 856px) and (min-width: 547px) {
+    .block_one_game {
+        padding: 1em;
+    }
+}
+
+@media (max-width: 547px) {
+    .block_one_game {
+        font-size: 0.9em;
+        padding: 1em 2em;
+    }
 }

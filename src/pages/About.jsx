@@ -9,7 +9,7 @@ function About() {
             <Navbar />
             <div className="textBlock">
                 This project was created with
-                <span style={{ color: "#6442ffd0" }}> SAMPLEAPI.com</span>
+                <span style={{ color: "#6442ffd0" }}> SAMPLEAPI</span>
             </div>
             <Background />
             <Footer />

@@ -38,3 +38,9 @@
 .navLink:hover::before {
     width: 100%;
 }
+
+@media (max-width: 547px) {
+    .navBlock {
+        font-size: 0.8em;
+    }
+}

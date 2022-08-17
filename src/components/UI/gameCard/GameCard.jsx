@@ -43,7 +43,7 @@ function GameCard(props) {
                                 <i class="fa-brands fa-playstation"></i>
                             </div>
                             <div className={cl.logo_platform}>
-                                <img style={{ width: "18px" }} src={switchLogo} alt="switch" />
+                                <img className={cl.logo_switch} src={switchLogo} alt="switch" />
                             </div>
                         </div>
                     )}
@@ -56,7 +56,7 @@ function GameCard(props) {
                             <i class="fa-brands fa-xbox"></i>
                         </div>
                         <div className={cl.logo_platform}>
-                            <img style={{ width: "18px" }} src={switchLogo} alt="switch" />
+                            <img className={cl.logo_switch} src={switchLogo} alt="switch" />
                         </div>
                     </div>
                 )}
@@ -91,7 +91,7 @@ function GameCard(props) {
                                 <i class="fa-brands fa-xbox"></i>
                             </div>
                             <div className={cl.logo_platform}>
-                                <img style={{ width: "18px" }} src={switchLogo} alt="switch" />
+                                <img className={cl.logo_switch} src={switchLogo} alt="switch" />
                             </div>
                         </div>
                     )}
@@ -104,7 +104,7 @@ function GameCard(props) {
                             <i class="fa-brands fa-playstation"></i>
                         </div>
                         <div className={cl.logo_platform}>
-                            <img style={{ width: "18px" }} src={switchLogo} alt="switch" />
+                            <img className={cl.logo_switch} src={switchLogo} alt="switch" />
                         </div>
                     </div>
                 )}
@@ -114,7 +114,7 @@ function GameCard(props) {
                 {props.platform.length === 1 && props.platform[0] === "Switch" && (
                     <div className={cl.game_detail_plt}>
                         <div className={cl.logo_platform}>
-                            <img style={{ width: "18px" }} src={switchLogo} alt="switch" />
+                            <img className={cl.logo_switch} src={switchLogo} alt="switch" />
                         </div>
                     </div>
                 )}
@@ -123,7 +123,7 @@ function GameCard(props) {
                     props.platform[1] === "PS" && (
                         <div className={cl.game_detail_plt}>
                             <div className={cl.logo_platform}>
-                                <img style={{ width: "18px" }} src={switchLogo} alt="switch" />
+                                <img className={cl.logo_switch} src={switchLogo} alt="switch" />
                             </div>
                             <div className={cl.logo_platform}>
                                 <i class="fa-brands fa-playstation"></i>
@@ -135,7 +135,7 @@ function GameCard(props) {
                     props.platform[1] === "Xbox" && (
                         <div className={cl.game_detail_plt}>
                             <div className={cl.logo_platform}>
-                                <img style={{ width: "18px" }} src={switchLogo} alt="switch" />
+                                <img className={cl.logo_switch} src={switchLogo} alt="switch" />
                             </div>
                             <div className={cl.logo_platform}>
                                 <i class="fa-brands fa-xbox"></i>
@@ -145,7 +145,7 @@ function GameCard(props) {
                 {props.platform.length === 3 && props.platform[0] === "Switch" && (
                     <div className={cl.game_detail_plt}>
                         <div className={cl.logo_platform}>
-                            <img style={{ width: "18px" }} src={switchLogo} alt="switch" />
+                            <img className={cl.logo_switch} src={switchLogo} alt="switch" />
                         </div>
                         <div className={cl.logo_platform}>
                             <i class="fa-brands fa-playstation"></i>

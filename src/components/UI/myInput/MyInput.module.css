@@ -42,3 +42,9 @@ form input:placeholder-shown + button {
     opacity: 0;
     pointer-events: none;
 }
+
+@media (max-width: 546px) {
+    .inputBtn {
+        width: 4em;
+    }
+}

@@ -10,7 +10,7 @@ function TopBtn(props) {
             <MyButton style={{ margin: "1em 0 ", backgroundColor: "#111" }}>
                 Add to wish list
             </MyButton>
-            <MyButton style={{ margin: "1em 0 " }}>Add to cart</MyButton>
+            <MyButton style={{ margin: "1em 0 " }}>Store</MyButton>
         </div>
     );
 }
