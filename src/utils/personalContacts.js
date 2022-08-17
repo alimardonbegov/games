@@ -5,12 +5,12 @@ export const personalContacts = [
         link: "https://t.me/alimardon_begov",
     },
     {
-        name: "Linked In",
+        name: "LinkedIn",
         logo: <i class="fa-brands fa-linkedin logo_element"></i>,
         link: "https://www.linkedin.com/in/alimardon-begov/",
     },
     {
-        name: "Mail",
+        name: "Email",
         logo: <i class="fa-solid fa-envelope logo_element"></i>,
         link: "mailto:alimardon.begov@gmail.com",
     },

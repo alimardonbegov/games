@@ -4,7 +4,7 @@ import cl from "./GameCard.module.scss";
 
 function GameCard(props) {
     return (
-        <div className={cl.block_one_game}>
+        <div onClick={props.onClick} className={cl.block_one_game}>
             <div className={cl.game_name}>
                 <h3>{props.name}</h3>
                 {/* <p> {props.releaseDatesEurope}</p> */}
@@ -159,7 +159,10 @@ function GameCard(props) {
                     <p>{props.genre}</p>
                 </div>
                 <div className="">
-                    <MyButton onClick={props.onClick} style={{ width: "100%" }}>
+                    <MyButton
+                        // onClick={}
+                        style={{ width: "100%" }}
+                    >
                         Open
                     </MyButton>
                 </div>

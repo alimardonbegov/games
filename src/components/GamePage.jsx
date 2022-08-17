@@ -5,11 +5,11 @@ import gamer from "../images/gamer.png";
 
 function GamePage(props) {
     return (
-        <div>
+        <div className="game_page">
             <TopBtn onClick={props.onClick} />
             <div className="game_page_block">
                 <div className="game_page_colored">
-                    <div> {props.gameName}</div>
+                    <div className="game_page_name"> {props.gameName}</div>
                     <br />
                     <p>
                         The game was developed by {props.gameDevelopers} and released by{" "}
@@ -17,7 +17,6 @@ function GamePage(props) {
                         Game genre: {props.gameGenre}. Highly recommended to play and enjoy the
                         atmosphere of this game.
                     </p>
-                    {/* <div>Game id: {props.gameId}</div> */}
                 </div>
                 <div className="game_page_img_block">
                     <img src={gamer} alt="" />

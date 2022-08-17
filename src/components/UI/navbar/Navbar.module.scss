@@ -1,6 +1,6 @@
 .navBlock {
     display: flex;
-    justify-content: space-between;
+    // justify-content: space-between;
     font-size: 1.8em;
     margin-bottom: 1em;
     font-weight: 700;
@@ -17,6 +17,7 @@
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     transition: all 0.2s ease-in-out;
+    margin-right: 2em;
 }
 
 .navLink:before {

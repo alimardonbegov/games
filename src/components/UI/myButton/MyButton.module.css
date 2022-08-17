@@ -6,7 +6,7 @@
     height: 3em;
     border: none;
     outline: none;
-    color: #fff;
+    color: white;
     background: #6442ffd0;
     cursor: pointer;
     position: relative;
@@ -18,6 +18,16 @@
     content: "";
     background: linear-gradient(
         45deg,
+        #ff00c8,
+        #7a00ff,
+        #6442ffd0,
+        white,
+        #6442ffd0,
+        #7a00ff,
+        #ff00c8
+    );
+    /* background: linear-gradient(
+        45deg,
         #ff0000,
         #ff7300,
         #fffb00,
@@ -27,10 +37,10 @@
         #7a00ff,
         #ff00c8,
         #ff0000
-    );
+    ); */
     position: absolute;
-    top: -2px;
-    left: -2px;
+    top: -3px;
+    left: -3px;
     background-size: 400%;
     z-index: -1;
     filter: blur(5px);
@@ -40,10 +50,6 @@
     opacity: 0;
     transition: opacity 0.3s ease-in-out;
     border-radius: 10px;
-}
-
-.myBtn:active {
-    color: #000;
 }
 
 .myBtn:active:after {

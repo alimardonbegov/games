@@ -1,7 +1,6 @@
 import GameCard from "./UI/gameCard/GameCard";
 import { useEffect, useState } from "react";
 import MyInput from "./UI/myInput/MuInput";
-import GameHeader from "./UI/gameHeader/GameHeader";
 
 function ListOfCards(props) {
     const [itemsOnPage, setItemsOnPage] = useState(18);
@@ -40,7 +39,11 @@ function ListOfCards(props) {
                 }}
             />
 
-            <GameHeader namePlatform={props.namePlatform} />
+            {itemsShow.length === 0 || props.games.length !== 0 ? (
+                <h1 style={{ textAlign: "center" }}>{props.namePlatform} games </h1>
+            ) : (
+                <h1 style={{ textAlign: "center" }}>There is no such games </h1>
+            )}
 
             <div className="block-games">
                 {(props.searchGames ? props.games : itemsShow).map((game, index) => {

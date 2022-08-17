@@ -7,11 +7,19 @@ function About() {
     return (
         <div className="App">
             <Navbar />
-            <div className="textBlock">
-                This project was created with
-                <a target="_blank" href="https://sampleapis.com/" style={{ color: "#6442ffd0" }}>
+            <div className="textBlock" style={{ width: "95%" }}>
+                This project was created with{" "}
+                <a className="link_project_git" target="_blank" href="https://sampleapis.com/">
+                    SAMPLEAPIS
+                </a>
+                <br /> Check this project on{" "}
+                <a
+                    className="link_project_git"
+                    target="_blank"
+                    href="https://github.com/alimardonbegov/games"
+                >
                     {" "}
-                    SAMPLEAPI
+                    GitHub
                 </a>
             </div>
             <Background />
