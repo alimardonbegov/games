@@ -35,6 +35,7 @@ function Home() {
         setListOfGames((prevValue) => {
             return { ...prevValue, ps: psGames, xb: xboxGames, sw: switchGame };
         });
+        createPlatform(listOfGames);
     }
 
     useEffect(() => {

@@ -11,7 +11,12 @@ function Contact() {
             <Navbar />
             <div className="textBlock">
                 {personalContacts.map((contact) => (
-                    <ContactLine name={contact.name} logo={contact.logo} href={contact.link} />
+                    <ContactLine
+                        key={contact.name}
+                        name={contact.name}
+                        logo={contact.logo}
+                        href={contact.link}
+                    />
                 ))}
             </div>
             <Background />
