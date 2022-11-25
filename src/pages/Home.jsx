@@ -42,7 +42,7 @@ function Home() {
         getFetch();
     }, []);
 
-    createPlatform(listOfGames);
+    //  createPlatform(listOfGames);
 
     const searchedGames = useMemo(() => {
         const ps = listOfGames.ps.filter((game) => game.name.toLowerCase().includes(searchGames));

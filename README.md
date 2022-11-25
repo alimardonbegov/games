@@ -1,6 +1,8 @@
 The project was created in goal of study. All pages was designed by myself.
 There are some features in animation that was found in open source, but a little bit corrected in term of project style.
 
+Open the project on CodeSandbox by the [link](https://y10fx6.csb.app/), that connected to this repository and synchronized.
+
 There are lists of updates for the future:
 
 1. Make filter by:
